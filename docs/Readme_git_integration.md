@@ -51,23 +51,29 @@ Dodano wpis do ~/.ssh/config:
 Host gitea-lab
     HostName 10.10.30.11
     Port 2222
-    User admin
+    User .....
     IdentityFile ~/.ssh/id_rsa_gitea
 
 Klucz publiczny (~/.ssh/id_rsa_gitea.pub) dodano w Gitei
 → Settings → SSH Keys → Add Key
 
+---
+
 ## Etap 3 - Dodanie drugiego zdalnego repozytorium
 
 Na Admin Workstation:
-git remote add gitea ssh://admin@10.10.30.11:2222/gitea/hybrid-lab.git
+git remote add gitea ssh://....@10.10.30.11:2222/gitea/hybrid-lab.git
 
 Sprawdzenie:
 git remote -v
 
-Etap 4 – Workflow DevOps
+---
+
+## Etap 4 – Workflow DevOps
 
 1 Development	Tworzysz / edytujesz kod na Admin Workstation	git add . && git commit -m "update"
 2 Push publiczny	Aktualizacja repo GitHub	git push origin main
 3 Push wewnętrzny	Mirror repozytorium w Gitei (VPN)	git push gitea main
 4 Deployment	Jump Host pobiera kod z Gitei i uruchamia automatyzację	git pull origin main && ansible-playbook site.yml
+
+---
