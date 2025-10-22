@@ -1,11 +1,11 @@
-# 🏗 Hybrid Enterprise Lab — On-prem + Cloud Infrastructure
+# Hybrid Enterprise Lab — On-prem + Cloud Infrastructure
 
 Projekt edukacyjny odzwierciedlający środowisko korporacyjne (enterprise).  
 **hybrydowa infrastruktura**, która łączy środowisko lokalne (Proxmox) z chmurą (AWS / Azure) przy użyciu VPN i automatyzacji.
 
 ---
 
-## 🌐 Architektura
+## Architektura
 
 **On-prem (mini PC / Proxmox):**
 - pfSense – firewall, VPN, DNS, site-to-site tunnel do chmury  
@@ -22,7 +22,7 @@ Projekt edukacyjny odzwierciedlający środowisko korporacyjne (enterprise).
 
 ---
 
-## 🧩 Stos technologiczny
+## Stos technologiczny
 
 | Kategoria | Technologia |
 |------------|--------------|
@@ -38,6 +38,7 @@ Projekt edukacyjny odzwierciedlający środowisko korporacyjne (enterprise).
 ---
 
 ## Diagram architektury
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/1b4ba619-2b8c-4bb2-8b78-fead2bb4e290" />
 
 
 
