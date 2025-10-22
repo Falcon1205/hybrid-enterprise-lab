@@ -1,40 +1,45 @@
-# Hybrid Enterprise Lab — On-prem + Cloud Infrastructure
+# 🏗 Hybrid Enterprise Lab — On-prem + Cloud Infrastructure
 
-Projekt  hybrydowej infrastruktury, która łączy środowisko lokalne (on-prem, Proxmox) z chmurą (AWS lub Azure) przy użyciu VPN i automatyzacji.
+Projekt edukacyjny odzwierciedlający środowisko korporacyjne (enterprise).  
+**hybrydowa infrastruktura**, która łączy środowisko lokalne (Proxmox) z chmurą (AWS / Azure) przy użyciu VPN i automatyzacji.
 
 ---
 
-## Architektura
+## 🌐 Architektura
 
 **On-prem (mini PC / Proxmox):**
 - pfSense – firewall, VPN, DNS, site-to-site tunnel do chmury  
-- Jump Host – Ansible, Terraform, Git, sterowanie infrastrukturą  
-- Repozytorium (Apt-Cacher) – lokalne aktualizacje offline    
+- Jump Host – Ansible, Terraform, GitOps control node  
+- Repozytorium (Apt-Cacher) – lokalne aktualizacje offline  
+- Gitea – lokalny Git server (mirror z GitHub)  
 - Zabbix Proxy – bufor monitoringu  
 - Agenty: Wazuh, Fluent Bit, Node Exporter  
 
 **Cloud (uruchamiane tylko gdy potrzeba):**
-- Wazuh + OpenSearch – SIEM (lekka wersja bez pełnego ELK)  
-- Grafana + Loki + Prometheus – monitoring i wizualizacja metryk  
-- Zabbix Server – centralny monitoring  
+- Wazuh + OpenSearch – SIEM (lekka wersja)  
+- Grafana + Loki + Prometheus – monitoring i metryki  
+- (opcjonalnie) Zabbix Server – centralny monitoring  
 
 ---
 
-## Cele projektu
+## 🧩 Stos technologiczny
 
-- Projekt infrastruktury enterprise  
-- Automatyzacja z Ansible (Infrastructure as Code)  
-- Praca w trybie offline (air-gap) z lokalnym repozytorium  
-- Hybrydowy monitoring i bezpieczeństwo  
-- Dokumentacja i GitOps workflow  
+| Kategoria | Technologia |
+|------------|--------------|
+| Wirtualizacja | Proxmox VE |
+| Firewall / VPN | pfSense |
+| IaC / Automatyzacja | Ansible, Terraform |
+| Repozytorium kodu | Gitea + GitHub |
+| Monitoring | Zabbix, Grafana, Prometheus |
+| Logowanie / SIEM | Wazuh, Fluent Bit, OpenSearch |
+| Systemy operacyjne | Debian / Ubuntu Server |
+| CI/CD | Gitea Actions / Jenkins (opcjonalnie) |
 
 ---
 
-## Struktura projektu
+## Diagram architektury
 
-hybrid-enterprise-lab/
-├── ansible/ → playbooki i role do automatyzacji
-├── docker/ → konfiguracje docker-compose (Grafana, Wazuh, Prometheus)
-├── docs/ → dokumentacja krok po kroku
-├── inventory/ → adresy serwerów i pliki inwentarza
-└── README.md → opis projektu
+
+
+---
+
